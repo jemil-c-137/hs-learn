@@ -51,6 +51,7 @@ d = head [1,2,3,4,5] -- 1
 
 e = length x -- return length of list
 k = init x -- return lists last element
+r = null x
 
 -- Function composition example 
 headOfTail = head(tail x)
@@ -60,6 +61,10 @@ asc n m
   | m < n = []
   | m == n = [m]
   | m > n = n : asc (n+1) m
+
+adder :: [Int] -> Int 
+adder [] = 0
+adder (x:xs) = x + adder xs
 
 -- doubles numbers in the list // double x == [0,2,4,6]
 double nums =
