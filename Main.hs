@@ -49,6 +49,9 @@ b = tail x -- return a tail of lise // [1,2,3]
 c = head x -- return first element // 0
 d = head [1,2,3,4,5] -- 1
 
+e = length x -- return length of list
+k = init x -- return lists last element
+
 -- Function composition example 
 headOfTail = head(tail x)
 
