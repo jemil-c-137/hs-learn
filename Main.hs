@@ -49,6 +49,11 @@ b = tail x -- return a tail of lise // [1,2,3]
 c = head x -- return first element // 0
 d = head [1,2,3,4,5] -- 1
 
+-- Function composition example 
+headOfTail = head(tail x)
+
+
+
 asc :: Int -> Int -> [Int]
 asc n m
   | m < n = []

@@ -3,3 +3,5 @@
 ### After that to run code, navigate to root directory, run command `ghci Main.hs` or `cabal v2-repl`. Now you can run your functions with given arguments, aka `fac 4`.
 
 ### Once you have changed sourse code rerun ghci, all your changes should be applied.
+
+### You also can write code right in `ghc`. After `ghci Main.hs` write your code and press enter. For exapmle write `null []` should return `True`.
