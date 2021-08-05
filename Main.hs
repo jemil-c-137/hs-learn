@@ -66,12 +66,6 @@ adder :: [Int] -> Int
 adder [] = 0
 adder (x:xs) = x + adder xs
 
--- doubles numbers in the list // double x == [0,2,4,6]
-double nums =
-  if null nums
-    then []
-    else 2 * head nums : double (tail nums)
-
 
 removeOdd numbers =
   if null numbers
@@ -86,3 +80,42 @@ removeOdd2 numbers
   | null numbers = []
   | mod (head numbers) 2 == 0 = head numbers : removeOdd2 (tail numbers)
   | otherwise = removeOdd2 (tail numbers)
+
+  -- tuples
+tp :: (Int, String )
+tp = (1, "Hello")
+
+ -- sum tuples
+addTuples :: [(Int, Int)] -> [Int]
+addTuples xs = [x+y | (x,y) <- xs]
+
+ -- Exercise 1
+  {- 
+    Create a function elem that returns True if an element is in a given list
+      and return False otherwise
+  -}
+elemt :: (Eq a) => a -> [a] -> Bool 
+elemt _ [] = False
+elemt t ( x : xs) = t == x || elemt t xs
+
+first' (a,b) = a
+
+second' (a,b) = b
+
+null' [] = True 
+null' (x : xs) = False
+
+
+head' (x : xs) = x
+head' [] = []
+
+-- doubles numbers in the list // double x == [0,2,4,6]
+double nums =
+  if null nums
+    then []
+    else 2 * head nums : double (tail nums)
+
+-- same in pattern matching style
+double' :: [Int] -> [Int] -- double' :: [a] -> [a]
+double' [] = []
+double' (x:xs) = ( 2 * x) : double' xs
