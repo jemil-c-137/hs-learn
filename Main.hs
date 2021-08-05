@@ -81,6 +81,11 @@ removeOdd2 numbers
   | mod (head numbers) 2 == 0 = head numbers : removeOdd2 (tail numbers)
   | otherwise = removeOdd2 (tail numbers)
 
+removeOdd' [] = []
+removeOdd'(x:xs)
+  | mod x 2 == 0 = x : removeOdd' xs
+  | otherwise = removeOdd' (tail xs)
+
   -- tuples
 tp :: (Int, String )
 tp = (1, "Hello")
